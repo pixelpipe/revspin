@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameter Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Parameter Form</h2>
+        <form id="parameterForm" onsubmit="return submitForm()">
+            <div class="slider-container">
+                <label for="ratingsRange">Ratings Range: <span id="ratingsRange">0.0 - 10.0</span></label>
+                <div class="range-slider">
+                    <input type="range" id="ratings_min" min="0" max="10" step="0.1" value="0" oninput="updateDualRange('ratings_min', 'ratings_max', 'ratingsRange', 'ratings_min', 'ratings_max')">
+                    <input type="range" id="ratings_max" min="0" max="10" step="0.1" value="10" oninput="updateDualRange('ratings_min', 'ratings_max', 'ratingsRange', 'ratings_min', 'ratings_max')">
+                    <div class="slider-track"></div>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <label for="speedRange">Speed Range: <span id="speedRange">0.0 - 10.0</span></label>
+                <div class="range-slider">
+                    <input type="range" id="speed_min" min="0" max="10" step="0.1" value="0" oninput="updateDualRange('speed_min', 'speed_max', 'speedRange', 'speed_min', 'speed_max')">
+                    <input type="range" id="speed_max" min="0" max="10" step="0.1" value="10" oninput="updateDualRange('speed_min', 'speed_max', 'speedRange', 'speed_min', 'speed_max')">
+                    <div class="slider-track"></div>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <label for="controlRange">Control Range: <span id="controlRange">0.0 - 10.0</span></label>
+                <div class="range-slider">
+                    <input type="range" id="control_min" min="0" max="10" step="0.1" value="0" oninput="updateDualRange('control_min', 'control_max', 'controlRange', 'control_min', 'control_max')">
+                    <input type="range" id="control_max" min="0" max="10" step="0.1" value="10" oninput="updateDualRange('control_min', 'control_max', 'controlRange', 'control_min', 'control_max')">
+                    <div class="slider-track"></div>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <label for="stiffnessRange">Stiffness Range: <span id="stiffnessRange">0.0 - 10.0</span></label>
+                <div class="range-slider">
+                    <input type="range" id="stiffness_min" min="0" max="10" step="0.1" value="0" oninput="updateDualRange('stiffness_min', 'stiffness_max', 'stiffnessRange', 'stiffness_min', 'stiffness_max')">
+                    <input type="range" id="stiffness_max" min="0" max="10" step="0.1" value="10" oninput="updateDualRange('stiffness_min', 'stiffness_max', 'stiffnessRange', 'stiffness_min', 'stiffness_max')">
+                    <div class="slider-track"></div>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <label for="hardnessRange">Hardness Range: <span id="hardnessRange">0.0 - 10.0</span></label>
+                <div class="range-slider">
+                    <input type="range" id="hardness_min" min="0" max="10" step="0.1" value="0" oninput="updateDualRange('hardness_min', 'hardness_max', 'hardnessRange', 'hardness_min', 'hardness_max')">
+                    <input type="range" id="hardness_max" min="0" max="10" step="0.1" value="10" oninput="updateDualRange('hardness_min', 'hardness_max', 'hardnessRange', 'hardness_min', 'hardness_max')">
+                    <div class="slider-track"></div>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <label for="consistencyRange">Consistency Range: <span id="consistencyRange">0.0 - 10.0</span></label>
+                <div class="range-slider">
+                    <input type="range" id="consistency_min" min="0" max="10" step="0.1" value="0" oninput="updateDualRange('consistency_min', 'consistency_max', 'consistencyRange', 'consistency_min', 'consistency_max')">
+                    <input type="range" id="consistency_max" min="0" max="10" step="0.1" value="10" oninput="updateDualRange('consistency_min', 'consistency_max', 'consistencyRange', 'consistency_min', 'consistency_max')">
+                    <div class="slider-track"></div>
+                </div>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
