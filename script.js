@@ -45,7 +45,9 @@ function submitForm() {
 
     const url = `https://revspin.net/top-blade/overall-desc.html?ratings_min=${ratingsMin}&ratings_max=${ratingsMax}&speed_min=${speedMin}&speed_max=${speedMax}&control_min=${controlMin}&control_max=${controlMax}&stiffness_min=${stiffnessMin}&stiffness_max=${stiffnessMax}&hardness_min=${hardnessMin}&hardness_max=${hardnessMax}&consistency_min=${consistencyMin}&consistency_max=${consistencyMax}`;
 
-    window.location.href = url;
+    // window.location.href = url;
+      // Open the URL in a new tab
+    window.open(url, '_blank');
     return false; // Prevent the default form submission
 }
 
