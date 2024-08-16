@@ -1,44 +1,52 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #333333;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
 }
 
+.header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.logo-placeholder img {
+    max-width: 150px;
+    height: auto;
+}
+
+.banner {
+    margin-top: 10px;
+}
+
+.banner p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .container {
-    max-width: 500px;
-    margin: 50px auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.footer {
-    background-color: #222;
-    color: #007bff;
-    max-width: 500px;
-    margin: 5px auto;
-    padding: 5px;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-h2 {
-    text-align: center;
-    color: #333333;
-    margin-bottom: 20px;
-}
-
 form {
     display: flex;
+    padding: 20px;
     flex-direction: column;
+    background-color: #f9f9f9;
 }
 
 label {
     margin-bottom: 20px; /* Increase space between label and slider */
-    
     color: #666666;
 }
 
@@ -47,7 +55,7 @@ label {
     width: 100%;
     height: 35px;
     margin-top: 10px; /* Increase space above the slider */
-    margin-bottom: 10px; /* Space below the slider */
+    margin-bottom: 30px; /* Space below the slider */
 }
 
 .range-slider input[type="range"] {
@@ -108,7 +116,7 @@ label {
 
 input[type="submit"] {
     padding: 10px;
-    background-color: #007bff;
+    background-color: #c00026;
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -119,4 +127,91 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+.panel-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.results-panel, .content-panel {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.content-panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.content-panel iframe {
+    width: 100%;
+    height: 500px; /* Adjust as needed */
+    border: none;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    color: #c00026;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    font-size: 18px; /* Match font size with buttons */
+    font-family: inherit; /* Inherit font family from parent */
+    text-align: center; /* Center text inside the input */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+
+.results-panel {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-panel iframe {
+    width: 100%;
+    height: 500px; /* Adjust as needed */
+    border: none;
+}
+
+
+h2 {
+    text-align: left;
+    color: #333333;
+    margin-bottom: 0px;
+    border-left: 4px solid  #c00026;
+    padding: 5px; /* Add padding for spacing within the heading */
+    background-color: #f9f9f9;
+    font-size: 24px; /* Increase font size for emphasis */
+    font-weight: bold; /* Make the text bold for better visibility */
+}
+
+.hint {
+    font-size: 14px;
+    color: #555555;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-left: 4px solid  #c00026;
+    padding: 10px;
+    border-radius: 4px;
 }

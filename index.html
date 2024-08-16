@@ -8,27 +8,21 @@
 </head>
 <body>
     <div class="container">       
-        <h2>Find you Blade</h2>
-        <p align="center"><img width="30%" height="30%" src="logo.png"></p>
-        <p align="center">Powered by <a href="www.revspin.net">revspin.net</a></p>
+        <!-- <p align="center"><img width="15%" height="15%" src="logo.png"></p> -->
+        <h2>Search Parameters</h2>
+        <p class="hint">
+            Select the desired range for each parameter and click "Submit." The results will appear below in the "Results" section. You can either copy the URL of a specific blade from the results and paste it into the Blade URL field, or open it in a new tab.
+        </p>        
         <form id="parameterForm" onsubmit="return submitForm()">
-            <p align="center">
-                Select desired range for each parameter and press submit.
-            </p>
-            <div class="slider-container">
-                <label for="ratingsRange">Ratings Range: <span id="ratingsRange">0.0 - 10.0</span></label>
-                <div class="range-slider">
-                    <input type="range" id="ratings_min" min="0" max="10" step="0.1" value="0" oninput="updateDualRange('ratings_min', 'ratings_max', 'ratingsRange', 'ratings_min', 'ratings_max')">
-                    <input type="range" id="ratings_max" min="0" max="10" step="0.1" value="10" oninput="updateDualRange('ratings_min', 'ratings_max', 'ratingsRange', 'ratings_min', 'ratings_max')">
-                    <div class="slider-track"></div>
-                </div>
-            </div>
+
+            <label for="ratings">Minimum Ratings: <span id="ratingsValue">10</span></label>
+            <input type="range" id="ratings" name="ratings" min="10" max="200" step="1" value="10" oninput="updateValue('ratings', 'ratingsValue')"><br>
 
             <div class="slider-container">
                 <label for="speedRange">Speed Range: <span id="speedRange">4 - 9.8</span></label>
                 <div class="range-slider">
-                    <input type="range" id="speed_min" min="0" max="10" step="0.1" value="4" oninput="updateDualRange('speed_min', 'speed_max', 'speedRange', 'speed_min', 'speed_max')">
-                    <input type="range" id="speed_max" min="0" max="10" step="0.1" value="9.8" oninput="updateDualRange('speed_min', 'speed_max', 'speedRange', 'speed_min', 'speed_max')">
+                    <input type="range" id="speed_min" min="0" max="10" step="0.1" value="4" oninput="updateDualRange('speed_min', 'speed_max', 'speedRange', 'speed_min', 'speed_max', 10)">
+                    <input type="range" id="speed_max" min="0" max="10" step="0.1" value="9.8" oninput="updateDualRange('speed_min', 'speed_max', 'speedRange', 'speed_min', 'speed_max', 10)">
                     <div class="slider-track"></div>
                 </div>
             </div>
@@ -36,8 +30,8 @@
             <div class="slider-container">
                 <label for="controlRange">Control Range: <span id="controlRange">6.3 - 9.8</span></label>
                 <div class="range-slider">
-                    <input type="range" id="control_min" min="0" max="10" step="0.1" value="6.3" oninput="updateDualRange('control_min', 'control_max', 'controlRange', 'control_min', 'control_max')">
-                    <input type="range" id="control_max" min="0" max="10" step="0.1" value="9.8" oninput="updateDualRange('control_min', 'control_max', 'controlRange', 'control_min', 'control_max')">
+                    <input type="range" id="control_min" min="0" max="10" step="0.1" value="6.3" oninput="updateDualRange('control_min', 'control_max', 'controlRange', 'control_min', 'control_max', 10)">
+                    <input type="range" id="control_max" min="0" max="10" step="0.1" value="9.8" oninput="updateDualRange('control_min', 'control_max', 'controlRange', 'control_min', 'control_max', 10)">
                     <div class="slider-track"></div>
                 </div>
             </div>
@@ -45,8 +39,8 @@
             <div class="slider-container">
                 <label for="stiffnessRange">Stiffness Range: <span id="stiffnessRange">1 - 9.9</span></label>
                 <div class="range-slider">
-                    <input type="range" id="stiffness_min" min="0" max="10" step="0.1" value="1" oninput="updateDualRange('stiffness_min', 'stiffness_max', 'stiffnessRange', 'stiffness_min', 'stiffness_max')">
-                    <input type="range" id="stiffness_max" min="0" max="10" step="0.1" value="9.9" oninput="updateDualRange('stiffness_min', 'stiffness_max', 'stiffnessRange', 'stiffness_min', 'stiffness_max')">
+                    <input type="range" id="stiffness_min" min="0" max="10" step="0.1" value="1" oninput="updateDualRange('stiffness_min', 'stiffness_max', 'stiffnessRange', 'stiffness_min', 'stiffness_max', 10)">
+                    <input type="range" id="stiffness_max" min="0" max="10" step="0.1" value="9.9" oninput="updateDualRange('stiffness_min', 'stiffness_max', 'stiffnessRange', 'stiffness_min', 'stiffness_max', 10)">
                     <div class="slider-track"></div>
                 </div>
             </div>
@@ -54,8 +48,8 @@
             <div class="slider-container">
                 <label for="hardnessRange">Hardness Range: <span id="hardnessRange">0.5 - 9.1</span></label>
                 <div class="range-slider">
-                    <input type="range" id="hardness_min" min="0" max="10" step="0.1" value="0.5" oninput="updateDualRange('hardness_min', 'hardness_max', 'hardnessRange', 'hardness_min', 'hardness_max')">
-                    <input type="range" id="hardness_max" min="0" max="10" step="0.1" value="9.1" oninput="updateDualRange('hardness_min', 'hardness_max', 'hardnessRange', 'hardness_min', 'hardness_max')">
+                    <input type="range" id="hardness_min" min="0" max="10" step="0.1" value="0.5" oninput="updateDualRange('hardness_min', 'hardness_max', 'hardnessRange', 'hardness_min', 'hardness_max', 10)">
+                    <input type="range" id="hardness_max" min="0" max="10" step="0.1" value="9.1" oninput="updateDualRange('hardness_min', 'hardness_max', 'hardnessRange', 'hardness_min', 'hardness_max', 10)">
                     <div class="slider-track"></div>
                 </div>
             </div>
@@ -63,19 +57,47 @@
             <div class="slider-container">
                 <label for="consistencyRange">Consistency Range: <span id="consistencyRange">1.5 - 10</span></label>
                 <div class="range-slider">
-                    <input type="range" id="consistency_min" min="0" max="10" step="0.1" value="1.5" oninput="updateDualRange('consistency_min', 'consistency_max', 'consistencyRange', 'consistency_min', 'consistency_max')">
-                    <input type="range" id="consistency_max" min="0" max="10" step="0.1" value="10" oninput="updateDualRange('consistency_min', 'consistency_max', 'consistencyRange', 'consistency_min', 'consistency_max')">
+                    <input type="range" id="consistency_min" min="0" max="10" step="0.1" value="1.5" oninput="updateDualRange('consistency_min', 'consistency_max', 'consistencyRange', 'consistency_min', 'consistency_max', 10)">
+                    <input type="range" id="consistency_max" min="0" max="10" step="0.1" value="10" oninput="updateDualRange('consistency_min', 'consistency_max', 'consistencyRange', 'consistency_min', 'consistency_max', 10)">
                     <div class="slider-track"></div>
                 </div>
             </div>
 
             <input type="submit" value="Submit">
         </form>
+
+        <h2>Blade</h2>
+        <p class="hint">
+            Just paste the blade URL you want to look for in the box below.
+        </p>
+
+        <form id="urlForm" class="url-form">
+            <input type="text" id="urlInput" value="https://revspin.net/blade/donic-baum-esprit.html" oninput="updateIframe()">
+            <!-- <input type="submit" value="Update Blade URL"> -->
+        </form>
+        <div class="panel-container">
+            <div id="contentPanel" class="content-panel">
+                <iframe id="contentIframe" src="https://revspin.net/blade/donic-baum-esprit.html" frameborder="0"></iframe>
+            </div>
+        </div>
+
+
+        <h2>Results</h2>
+        <p class="hint">
+            Results will be shown here.
+        </p>
+        <div class="panel-container">
+            <div class="results-panel">
+                <iframe id="resultsIframe" src="" frameborder="0"></iframe>
+            </div>
+        </div>
     </div>
+
+
 
     <div class="footer">
         <p align="center">&copy;2024 by codres.de</p>
-        <p align="center">codres.de is not affiliated in any way with revspin.net</p>
+        <p align="center">Powered by <a href="www.revspin.net" target="_blank">revspin.net</a>.</br>codres.de is not affiliated in any way with <a href="www.revspin.net" target="_blank">revspin.net</a></p>
     </div>
     <script src="script.js"></script>
 </body>
